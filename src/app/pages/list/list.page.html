@@ -4,7 +4,10 @@
   <task-item *ngFor="let item of tasks" [task]="item"></task-item>
 </div>
 
-<div class="footer">
+<div
+  *ngIf="listId !== 'all' && listId !== 'favorites' && listId !== 'done'"
+  class="footer"
+>
   <img src="assets/icons/plus-white.svg" (click)="createNewTask()" />
   <input
     type="text"

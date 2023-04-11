@@ -4,12 +4,12 @@ import { IList } from 'src/app/interfaces/list.interface';
 import { DataService } from 'src/app/services/data.service';
 import { TaskItemComponent } from 'src/app/components/task-item/task-item.component';
 import { ITask } from 'src/app/interfaces/task.interface';
-import { NgFor, TitleCasePipe } from '@angular/common';
+import { NgFor, NgIf, TitleCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
-  imports: [TaskItemComponent, NgFor, FormsModule, TitleCasePipe],
+  imports: [TaskItemComponent, NgFor, FormsModule, TitleCasePipe, NgIf],
   templateUrl: 'list.page.html',
   styleUrls: ['list.page.scss'],
 })
