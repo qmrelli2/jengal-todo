@@ -1,0 +1,8 @@
+<h3 class="title">Search Results</h3>
+
+<div class="tasks">
+  <task-item
+    *ngFor="let item of dataService.searchResults"
+    [task]="item"
+  ></task-item>
+</div>

@@ -1,0 +1,21 @@
+:host {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  opacity: 0.5;
+
+  img {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    height: 100%;
+    font-size: 1.1rem;
+    background-color: transparent;
+  }
+}

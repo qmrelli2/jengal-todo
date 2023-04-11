@@ -1,0 +1,36 @@
+<profile></profile>
+<searchbox></searchbox>
+
+<div class="list-items">
+  <div
+    class="list-item"
+    *ngFor="let item of defaultLists"
+    [routerLink]="['/list/' + item.path]"
+    routerLinkActive="active"
+  >
+    <img [src]="item.icon" />
+    <h5>{{ item.title }}</h5>
+  </div>
+</div>
+
+<span class="seperator"></span>
+
+<div class="list-items custom-lists">
+  <div
+    class="list-item"
+    *ngFor="let item of dataService.$lists | async"
+    [routerLink]="['/list/' + item.id]"
+    routerLinkActive="active"
+  >
+    <img src="assets/icons/list.svg" />
+    <h5>{{ item.title }}</h5>
+    <img *ngIf="item.locked" src="assets/icons/lock.svg" />
+  </div>
+
+  <list-form *ngIf="showListForm" (closeForm)="onCloseForm()"></list-form>
+</div>
+
+<div class="footer" (click)="onNewList()">
+  <img src="assets/icons/plus.svg" />
+  <h5>New List</h5>
+</div>

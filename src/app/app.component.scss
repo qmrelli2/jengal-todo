@@ -1,0 +1,9 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  .content-wrapper {
+    width: calc(100% - 18rem);
+  }
+}

@@ -1,0 +1,9 @@
+<img src="assets/icons/list.svg" />
+<input
+  #input
+  contenteditable="true"
+  [(ngModel)]="title"
+  type="text"
+  placeholder="name your list..."
+  (keyup)="onKeyup($event)"
+/>

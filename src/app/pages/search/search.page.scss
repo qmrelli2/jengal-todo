@@ -1,0 +1,24 @@
+:host {
+  height: calc(100% - 5rem);
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem 2rem 2rem;
+  background-size: cover;
+  background-position: center;
+  background-color: #d4d4d4;
+
+  .title {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  .tasks {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+}

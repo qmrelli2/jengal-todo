@@ -1,0 +1,24 @@
+<div class="status">
+  <span *ngIf="task.done"></span>
+</div>
+
+<div class="content">
+  <p class="title">{{ task.title }}</p>
+
+  <div class="date">
+    <img src="assets/icons/time.svg" />
+    <p>
+      {{ task.dateCreated | date : "EEEE, MMM dd" }}
+    </p>
+  </div>
+</div>
+
+<button (click)="onFavorite($event)">
+  <img
+    [src]="
+      !task.favorite
+        ? 'assets/icons/star-fade.svg'
+        : 'assets/icons/star-fill.svg'
+    "
+  />
+</button>
