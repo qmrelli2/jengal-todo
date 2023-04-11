@@ -66,13 +66,15 @@ export class ListPage implements OnInit {
   }
 
   onKeyup(eventData: any) {
-    if (eventData.key === 'Enter' && this.newTaskTitle) {
+    if (eventData.key === 'Enter') {
       this.createNewTask();
     }
   }
 
   createNewTask() {
-    this.dataService.createTask(this.newTaskTitle, Number(this.listId));
-    this.newTaskTitle = '';
+    if (this.newTaskTitle) {
+      this.dataService.createTask(this.newTaskTitle, Number(this.listId));
+      this.newTaskTitle = '';
+    }
   }
 }
