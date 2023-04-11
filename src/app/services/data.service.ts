@@ -53,6 +53,14 @@ export class DataService {
     this.tasks.next([...this.tasks.value, task]);
   }
 
+  removeTask(id: number) {
+    let newArr = this.tasks.value.filter((task: ITask) => {
+      return task.id !== id;
+    });
+
+    this.tasks.next(newArr);
+  }
+
   makeSearch(phrase: string) {
     this.searchResults = this.tasks.value.filter((task: ITask) => {
       return task.title.toLowerCase().includes(phrase.toLowerCase());

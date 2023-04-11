@@ -7,6 +7,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { ITask } from 'src/app/interfaces/task.interface';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   standalone: true,
@@ -26,12 +27,16 @@ export class TaskItemComponent implements OnInit {
     this.task.done = !this.task.done;
   }
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {}
 
   onFavorite(event: Event) {
     event.stopPropagation();
     this.task.favorite = !this.task.favorite;
+  }
+
+  onDelete(event: Event) {
+    this.dataService.removeTask(this.task.id);
   }
 }
